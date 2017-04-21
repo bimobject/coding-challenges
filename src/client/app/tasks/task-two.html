@@ -1,0 +1,46 @@
+<section class="mainbar">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="border">
+                    <b>The form should be valid when:</b>
+                    <ul>
+                        <li>(any) one or more check-boxes is selected</li>
+                        <li>The select-box lists <u>the selected</u> objects below</li>
+                        <li>The select-box has an item selected</li>
+                    </ul>
+                </div>
+                <form name="testForm"  ng-submit="testForm.$valid" novalidate class="border">
+                    <p>
+                        testForm.checkBox.$valid = {{testForm.checkBox.$valid}}
+                    </p>
+                    <fieldset class="form-group col-xs-12" ng-class="{ 'has-error': testForm.checkBox.$invalid, 'has-success': testForm.checkBox.$valid}">
+                        <div ng-repeat="o in vm.checkBoxes">
+                            <div class="checkbox">
+                                    <p>{{o.label}}</p>
+                                    <input type="checkbox" ng-model="o.id" valud="o.id" name="checkBox" required />
+                                    <div class="space10"></div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <hr />
+                    <p>
+                        I should list the labels of the checkboxes selected above
+                    </p>
+                    
+                    <fieldset class="form-group col-xs-12" ng-class="{ 'has-error': testForm.dropDown.$invalid, 'has-success': testForm.dropDown.$valid}">
+                        <select class="form-control input-sm c-select" name="dropDown" ng-model="vm.dropDown" required>
+                            <option value="" disabled style="display:none;">Labels of checkbox-objects</option>
+                        </select>
+                    </fieldset>
+                    <hr />
+                    <button class="btn btn-primary" ng-disabled="true" ng-clicked="vm.problem2Solved()">I should only be enabled if the form is valid</button>
+                
+                    <p>
+                        testForm.$valid = {{testForm.$valid}}
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+</section>

@@ -1,0 +1,45 @@
+<style>
+    .box-container {
+        color: black;
+    }
+    .box-red{
+        background-color: lightcoral;
+        padding: 20px;
+    }
+    .box-blue {
+        background-color: lightskyblue;
+        padding: 20px;
+    }
+    .box-green {
+        background-color: green;
+        padding: 20px;
+    }
+</style>
+
+<section class="mainbar">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="widget wblue">
+                    <div ht-widget-header title="{{vm.title}}"></div>
+                    <div class="widget-content user">
+                        <div class="box-container">
+                            <div class="box-red">
+                                <strong>I am box A</strong>
+                                <div>{{vm.boxes.first}}</div>
+                            </div>
+                            <div class="box-blue">
+                                <strong>I am box B</strong>
+                                <div>{{vm.boxes.second}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-foot">
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+

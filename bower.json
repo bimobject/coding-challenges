@@ -1,0 +1,27 @@
+{
+  "name": "coding-challenges",
+  "version": "0.1.0",
+  "description": "AngularJS and Javascript related coding challenges.",
+  "authors": [
+    "Per Johansson"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/bimobject/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "1.6.4",
+    "angular-sanitize": "^1.6.4",
+    "angular-animate": "1.6.4",
+    "angular-ui-bootstrap": "^2.5.0",
+    "bootstrap": "^3.3.7",
+    "extras.angular.plus": "^0.9.3",
+    "font-awesome": "~4.2.0",
+    "jquery": "^2.2.4",
+    "moment": "~2.8.4",
+    "toastr": "^2.1.3"
+  }
+}

@@ -1,0 +1,15 @@
+[
+    {
+        "question": "estimated time?",
+        "answer": "We do not request you to put more than 3-6 hours into this. In fact, completing everything (while not wrong) isn't neccessary, as long as you feel you've shown what you're capable of, we're happy!"
+    },{
+        "question": "does the tasks give any points?",
+        "answer": "They do not! Consider this a 'playground of code', doing the initial two tasks are especially encouraged if time is running short, however."
+    },{
+        "question": "Where do I ... code?",
+        "answer": "For the most part, you will be working in the /src/client/app/tasks folder. Although, in some cases you may want to check out /src/client/core/dataservice.js"
+    },{
+        "question": "what else can you tell me?",
+        "answer": "We will look at how you solve the tasks (structure, efficiency, design, etc), and as much as we look forward to looking at your code, we are equally interested in hearing your input on the tasks. Which you enjoyed doing and of course, if there was something that was too hard or bluntly too easy for you."
+    }
+]

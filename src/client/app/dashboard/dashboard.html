@@ -1,0 +1,58 @@
+<section id="dashboard-view" class="mainbar">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="widget wblue">
+                    <div ht-widget-header title="Approved tools of aid"
+                        allow-collapse="true"></div>
+                        <ul class="today-datas">
+                            <li class="borange">
+                                <div class="pull-left"><i class="fa fa-coffee"></i></div>
+                                <div class="datas-text pull-right">
+                                    <span class="bold">Coffee</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+
+                            <li class="bviolet">
+                                <div class="pull-left"><i class="fa fa-desktop"></i></div>
+                                <div class="datas-text pull-right">
+                                    A computer
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="widget wblue">
+                        <div ht-widget-header title="FAQ"
+                             allow-collapse="true"></div>
+                        <div class="widget-content text-center text-info">
+                            <div class="container">
+                                 <ul class="row image-group">
+                                      <li ng-repeat="c in vm.instructions" class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+                                        <div class="user">
+                                            <div>
+                                                <h3>{{c.question}}</h3>
+                                            </div>
+                                            <br />
+                                            <div>
+                                                <small>{{c.answer}}</small>
+                                            </div>
+                                        </div>
+                                      </li>
+                                 </ul>
+                            </div>
+                        </div>
+                        <div class="widget-foot">
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

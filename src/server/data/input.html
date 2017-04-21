@@ -1,0 +1,56 @@
+<article class="day-desc">
+<h2>--- The Keypad ---</h2><p>
+You arrive at a gate (some digging required, but to be fair, it wasn’t really a challenge). A keypad! Whatever is hidden beyond this infernal gate (spoiler alert: nothing really) will remain unknown until this mystery is solved.</p><p>You search the nearby desk for the code.</p><p>"In order to improve security," the document you find says, "codes will no longer be written down. Instead, please memorize and follow the procedure below to access the bathrooms." The document goes on to explain that each button to be pressed can be found by starting on the previous button and moving to adjacent buttons on the keypad: U moves up, D moves down, L moves left, and R moves right. Each line of instructions corresponds to one button, starting at the previous button (or, for the first line, the "5" button); press whatever button you're on at the end of each line. If a move doesn't lead to a button, ignore it.</p><p> The keypad is like no other you have ever seen. You are confronted with the result of hundreds of man-hours of <span title="User Group 143 found a diamond shape to be the most environmentally friendly.">keypad-design meetings:</span></p>
+<pre><code>     
+     1
+   2 3 4
+ 5 6 7 8 9 
+   A B C
+     D
+
+</code></pre>
+<p>Suppose your instructions are:</p>
+<pre><code>ULL
+RRDDD
+LURDL
+UUUUD
+</code></pre>
+<ul>
+<li>You start at "5" and don't move at all (up and left are both edges), ending at <code>5</code>.</li>
+<li>Continuing from "5", you move right twice and down three times (through "6", "7", "B", "D", "D"), ending at <code>D</code>.</li>
+<li>Then, from "D", you move five more times (through "D", "B", "C", "C", "B"), ending at <code>B</code>.</li>
+<li>Finally, after five more moves, you end at <code>3</code>.</li>
+</ul>
+<p>So, given the actual keypad layout, the code would be <code>5DB3</code>.</p>
+<p>Using the same instructions in your puzzle input, what is the correct <em> <a href="input.txt">code</a></em>?</p>
+</article>
+
+<style>
+pre, code { font-family: "Source Code Pro", monospace; }
+code {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+code:before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  display: block;
+  left: -2px;
+  right: -2px;
+  top: 3px;
+  bottom: 0px;
+  border: 1px solid #333340;
+  background: #10101a;
+}
+
+body {
+  background: #0f0f23; /*337 x 5*/
+  color: #cccccc;
+  font-family: "Source Code Pro", monospace;
+  font-size: 14pt;
+  min-width: 48em;
+}
+</style>
