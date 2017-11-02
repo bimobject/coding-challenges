@@ -44,14 +44,19 @@
                     controllerAs: 'vm',
                     title: 'Second Challenge',
                     settings: {
+                        disabled: true,
                         nav: 3,
                         content: '<i class="fa fa-group"></i> Task 2'
                     }
                 }
             },
             {
-                state: 'task.todo',
+                state: 'task.three',
                 config: {
+                    url: '/three',
+                    templateUrl: 'app/tasks/three/task-three.html',
+                    controller: 'TaskThree',
+                    controllerAs: 'vm',
                     title: "Third challenge",
                     settings: {
                         nav: 4,
@@ -69,10 +74,24 @@
                     title: 'Fourth Challenge',
                     settings: {
                         nav: 5,
-                        content: '<i class="fa fa-group"></i> Task 4'
+                        content: '<i class="fa fa-group"></i> Task 4 (optional)'
                     }
                 }
-            }
+            },
+            {
+                state: 'task.five',
+                config: {
+                    url: '/five',
+                    templateUrl: 'app/tasks/five/task-five.html',
+                    controller: 'TaskFive',
+                    controllerAs: 'vm',
+                    title: 'Fifth Challenge',
+                    settings: {
+                        nav: 6,
+                        content: '<i class="fa fa-group"></i> Task 5'
+                    }
+                }
+            }            
         ];
     }
 })();

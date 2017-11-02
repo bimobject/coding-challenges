@@ -7,12 +7,6 @@
 
     /* @ngInject */
     function htSidebar () {
-        // Opens and closes the sidebar menu.
-        // Usage:
-        //  <div ht-sidebar">
-        //  <div ht-sidebar whenDoneAnimating="vm.sidebarReady()">
-        // Creates:
-        //  <div ht-sidebar class="sidebar">
         var directive = {
             link: link,
             restrict: 'EA',

@@ -9,12 +9,11 @@
     function Dashboard($state, dataservice, logger) {
         var vm = this;
         vm.title = 'Dashboard';
-
         activate();
 
         function activate() {
             return getInstructions().then(function() {
-                logger.info('Welcome!');
+                logger.info('Welcome coder!');
             });
         }
 

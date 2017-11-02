@@ -8,7 +8,7 @@
                 <li class="nlightblue fade-selection-animation" ng-class="vm.isCurrent(r)"
                     ng-repeat="r in vm.navRoutes">
                     <a ng-if="(r.name === 'task.todo')" class="disabled" uib-tooltip="Implement me to see the next task! =)" tooltip-class="customClass"><i class="fa fa-group"></i> Task 3</a>
-                    <a ng-if="(r.name !== 'task.todo')" ui-sref="{{r.name}}"
+                    <a ng-if="(r.name !== 'task.todo')" ng-class="{'disabled': r.settings.disabled}" ui-sref="{{r.name}}"
                     ng-bind-html="r.settings.content">
                     </a>
                 </li>

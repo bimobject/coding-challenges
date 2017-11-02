@@ -7,11 +7,18 @@
                                                             Welcome! 
 
                 This task requires you to perform an API-call to our local nodeJS server and request a file. 
-                Display the content of bower.json and display it below. May the AJAX calls be with you!
+                Display the content of bower.json and display it below.
+                Why not display the content with some custom css added outside these &lt;pre> tags? =)
+
+                May the AJAX calls be with you!
 
     .:*~*:._.:*~*:._.:*~*:..:*~*:._.:*~*:._.:*~*:..:*~*:._.:*~*:._.:*~*:..:*~*:._.:*~*:._.:*~*:..:*~*:._.:*~*:._.:*~*:..:*~*:.
 
 
-    $: > No data found. Entering sleep mode...
+    $: > {{(bowerJsonData.data && bowerJsonData.data.name) ? 'Data found. Powering up...' : 'No data found. Entering sleep mode...'}}
 
 </pre>
+
+<div>
+    {{bowerJsonData}}
+</div>

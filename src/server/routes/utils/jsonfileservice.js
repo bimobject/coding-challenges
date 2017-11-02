@@ -1,3 +1,6 @@
+var path = require('path');
+var root = path.dirname(require.main.filename);
+
 module.exports = function() {
     var service = {
         getJsonFromFile: getJsonFromFile
@@ -9,16 +12,18 @@ module.exports = function() {
         var json = getConfig(file);
         return json;
 
-        function readJsonFileSync(filepath, encoding) {
+        function readJsonFileSync(filepath, encoding, callback) {
             if (typeof (encoding) === 'undefined') {
                 encoding = 'utf8';
             }
             var file = fs.readFileSync(filepath, encoding);
-            return JSON.parse(file);
+            return file ? JSON.parse(file) : {};
         }
 
         function getConfig(file) {
-            var filepath = __dirname + file;
+            console.log("__dirname: ", __dirname);
+            console.log("root: ", root);
+            var filepath = __dirname + '/../..' + file;
             return readJsonFileSync(filepath);
         }
     }

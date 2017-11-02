@@ -15,6 +15,8 @@
         function activate(){
             dataservice.getBowerJson().then(function(res){
                 vm.bowerJsonData = res;
+            }).catch(function(err) {
+                vm.bowerJsonData = 'err fetching file: ' + err;
             });
         }
     }
