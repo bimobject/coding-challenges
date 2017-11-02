@@ -38,7 +38,7 @@
                     <h2 ng-click="vm.toggleInstructions()">{{vm.showInput ? 'Hide' : 'Show'}} instructions</h2>
                 </a>
                 <div id="posdemoparent" ng-show="vm.showInput" style="overflow: scroll;border: 1px solid #ccc; padding: 15px;">
-                    <div ng-repeat="task in vm.input">
+                    <div ng-repeat="task in vm.input track by $index">
                         {{task}}
                     </div>
                 </div>

@@ -16,7 +16,7 @@
             getBowerJson: getBowerJson,
             getInstructions: getInstructions,
             getInput: getInput,
-
+            getLog: getLog,
             ready: ready
         };
 
@@ -63,7 +63,7 @@
         }
 
         function getInstructions() {
-            return $http.get('/api/instructions')
+            return $http.get('/api/tasks/instructions')
                 .then(success)
                 .catch(function(message) {
                     exception.catcher('XHR Failed for getInstructions()')(message);
@@ -76,12 +76,25 @@
         }
 
         function getInput() {
-            return $http.get('/api/tasks/input')
+            return $http.get('/api/tasks/four')
                 .then(success)
                 .catch(function(message) {
                     exception.catcher('XHR Failed for getInput()')(message);
                     $location.url('/');
                 });
+
+            function success(response) {
+                return response.data;
+            }
+        }
+
+        function getLog() {
+            return $http.get('/api/log')
+            .then(success)
+            .catch(function(message) {
+                exception.catcher('XHR Failed for getInput()')(message);
+                $location.url('/');
+            });
 
             function success(response) {
                 return response.data;

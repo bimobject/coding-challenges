@@ -85,14 +85,31 @@
 
             function init() {
                 handleRoutingErrors();
+                routeGuard();
                 updateDocTitle();
             }
 
             function getStates() { return $state.get(); }
 
+            function routeGuard() {
+                $rootScope.$on('$stateChangeStart',
+                    function(event, toState, toParams, fromState, fromParams) {
+                        if (toState.settings.disabled) {
+                            event.preventDefault();
+                        }
+                    }
+                );
+            }
+            
             function updateDocTitle() {
                 $rootScope.$on('$stateChangeSuccess',
                     function(event, toState, toParams, fromState, fromParams) {
+                        if ($state.includes('task')) {
+                            logger.info('Task ' + $state.current.url.split('/')[1] + ' loaded');
+                        }
+                        
+                        // var task = $state.current.url;
+                        // logger.info('Task ' + task + " loaded.");
                         stateCounts.changes++;
                         handlingStateChangeError = false;
                         var title = config.docTitle + ' ' + (toState.title || '');

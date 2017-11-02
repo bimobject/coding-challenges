@@ -5,9 +5,9 @@
         .module('app.layout')
         .controller('Shell', Shell);
 
-    Shell.$inject = ['$timeout', 'config', 'logger'];
+    Shell.$inject = ['dataservice', '$timeout', 'config', 'logger'];
     /* @ngInject */
-    function Shell($timeout, config, logger) {
+    function Shell(dataservice, $timeout, config, logger) {
         var vm = this;
 
         vm.title = config.appTitle;
@@ -22,7 +22,11 @@
         activate();
 
         function activate() {
-            logger.success(config.appTitle + ' loaded!', null);
+            dataservice.getLog().then(function(res) {
+                if (res.count%3 === 0) {
+                   // logger.logConsole();
+                }
+            });
             hideSplash();
         }
 

@@ -11,6 +11,7 @@
         var vm = this;
         var states = routerHelper.getStates();
         vm.isCurrent = isCurrent;
+        vm.checkDisableStatus = vm.checkDisableStatus;
         //vm.sidebarReady = function(){console.log('done animating menu')}; // example
 
         activate();
@@ -23,6 +24,12 @@
             }).sort(function(r1, r2) {
                 return r1.settings.nav - r2.settings.nav;
             });
+        }
+
+        function checkDisableStatus(disabled, event) {
+            if(disabled) {
+                event.stopPropagation();
+            }
         }
 
         function isCurrent(route) {

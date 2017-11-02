@@ -1,25 +1,17 @@
 const express = require('express');
 const router = express.Router();
+const files = require('./files');
 const tasks = require('./tasks');
+const logService = require('./utils/log.service');
 
-router.get('/instructions', getInstructions);
-router.get('/files/bower', getBowerJson);
+router.use('/files', files);
 router.use('/tasks', tasks);
+router.get('/log', getLog);
 
-var data = '/../../data/';
-var jsonfileservice = require('./utils/jsonfileservice')();
-
-function getInstructions(req, res, next) {
-    var json = jsonfileservice.getJsonFromFile(data + 'instructions.json');
-    res.send(json);
+function getLog(req, res, next) {
+    logService.getLog(function(err, data) {
+        res.send(data);
+    });
 }
-
-function getBowerJson(req, res, next) {
-    var json = {
-        data: "I'm empty, except for the part explaining that I'm empty, that is."
-    };
-    res.send(json);
-}
-
 
 module.exports = router;
