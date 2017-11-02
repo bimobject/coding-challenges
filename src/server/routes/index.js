@@ -1,23 +1,25 @@
-module.exports = function(app) {
-    var api = '/api';
-    var data = '/../../data/';
-    var jsonfileservice = require('./utils/jsonfileservice')();
+const express = require('express');
+const router = express.Router();
+const tasks = require('./tasks');
 
-    app.get(api + '/instructions', getInstructions);
-    app.get(api + '/files/bower', getBowerJson);
+router.get('/instructions', getInstructions);
+router.get('/files/bower', getBowerJson);
+router.use('/tasks', tasks);
 
-    function getAlbums(req, res, next) {
-    }
+var data = '/../../data/';
+var jsonfileservice = require('./utils/jsonfileservice')();
 
-    function getInstructions(req, res, next) {
-        var json = jsonfileservice.getJsonFromFile(data + 'instructions.json');
-        res.send(json);
-    }
+function getInstructions(req, res, next) {
+    var json = jsonfileservice.getJsonFromFile(data + 'instructions.json');
+    res.send(json);
+}
 
-    function getBowerJson(req, res, next) {
-        var json = {
-            data: "I'm empty, except for the part explaining that I'm empty, that is."
-        };
-        res.send(json);
-    }
-};
+function getBowerJson(req, res, next) {
+    var json = {
+        data: "I'm empty, except for the part explaining that I'm empty, that is."
+    };
+    res.send(json);
+}
+
+
+module.exports = router;

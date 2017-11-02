@@ -26,16 +26,6 @@
                         content: '<i class="fa fa-dashboard"></i> Dashboard'
                     }
                 }
-            },{
-                state: 'dashboard.input',
-                config: {
-                    url: 'six',
-                    title: 'refresh the browser',
-                    settings: {
-                        nav: 0,
-                        content: 'task 6'
-                    }
-                }
             }
         ];
     }

@@ -10,8 +10,7 @@ var errorHandler = require('./routes/utils/errorHandler')();
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var port = process.env.PORT || 4040;
-var routes;
-
+var routes = require('./routes/index');
 var environment = process.env.NODE_ENV;
 
 app.use(favicon(__dirname + '/favicon.ico'));
@@ -24,9 +23,8 @@ app.use(logger('dev'));
 app.use(cors());
 app.use(errorHandler.init);
 
-routes = require('./routes/index')(app);
+app.use('/api', routes);
 
-console.log('About to crank up node');
 console.log('PORT=' + port);
 console.log('NODE_ENV=' + environment);
 

@@ -71,3 +71,6 @@ ehthumbs.db
 Icon?
 Thumbs.db
 
+# config
+src/server/config.js
+.vscode

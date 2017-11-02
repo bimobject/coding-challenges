@@ -8,8 +8,8 @@
         'app.widgets',
 
         /* Feature areas */
-        'app.tasks',
         'app.dashboard',
+        'app.tasks',
         'app.layout'
     ]);
 

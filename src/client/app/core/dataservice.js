@@ -15,7 +15,8 @@
             getTaskTwo: getTaskTwo,
             getBowerJson: getBowerJson,
             getInstructions: getInstructions,
-            getAlbums: getAlbums,
+            getInput: getInput,
+
             ready: ready
         };
 
@@ -74,15 +75,17 @@
             }
         }
 
-        function getAlbums() {
-            var res = {
-                data: {
-                    albums: {
-                        items: []
-                    }
-                }
-            };
-            return $q.when(res);
+        function getInput() {
+            return $http.get('/api/tasks/input')
+                .then(success)
+                .catch(function(message) {
+                    exception.catcher('XHR Failed for getInput()')(message);
+                    $location.url('/');
+                });
+
+            function success(response) {
+                return response.data;
+            }
         }
 
         function getReady() {

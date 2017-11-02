@@ -6,7 +6,33 @@
 .space40 { height: 40px; }
 .space50 { height: 50px; }
 
+pre, code { font-family: "Source Code Pro", monospace; }
+code {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+code:before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  display: block;
+  left: -2px;
+  right: -2px;
+  top: 3px;
+  bottom: 0px;
+  border: 1px solid #333340;
+  background: #10101a;
+}
 
+body {
+  background: #0f0f23; /*337 x 5*/
+  color: #cccccc;
+  font-family: "Source Code Pro", monospace;
+  font-size: 14pt;
+  min-width: 48em;
+}
 
 
 * {

@@ -16,16 +16,16 @@
             {
                 state: 'task',
                 config: {
+                    url: '/tasks',
                     absract: true,
-                    template: '<ui-view class="shuffle-animation"/>',
-                    url: '/tasks'
+                    template: '<ui-view class="shuffle-animation"/>'
                 }
             },
             {
                 state: 'task.one',
                 config: {
                     url: '/one',
-                    templateUrl: 'app/tasks/task-one.html',
+                    templateUrl: 'app/tasks/one/task-one.html',
                     controller: 'TaskOne',
                     controllerAs: 'vm',
                     title: 'First Challenge',
@@ -39,7 +39,7 @@
                 state: 'task.two',
                 config: {
                     url: '/two',
-                    templateUrl: 'app/tasks/task-two.html',
+                    templateUrl: 'app/tasks/two/task-two.html',
                     controller: 'TaskTwo',
                     controllerAs: 'vm',
                     title: 'Second Challenge',
@@ -52,6 +52,7 @@
             {
                 state: 'task.todo',
                 config: {
+                    title: "Third challenge",
                     settings: {
                         nav: 4,
                         content: '<i class="fa fa-group"></i> Task 3'
@@ -62,7 +63,7 @@
                 state: 'task.four',
                 config: {
                     url: '/four',
-                    templateUrl: 'app/tasks/task-four.html',
+                    templateUrl: 'app/tasks/four/task-four.html',
                     controller: 'TaskFour',
                     controllerAs: 'vm',
                     title: 'Fourth Challenge',

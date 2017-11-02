@@ -7,7 +7,7 @@
         var directive = {
             link: link,
             restrict: 'EA',
-            templateUrl: '/app/tasks/json-viewer.directive.html',
+            templateUrl: '/app/tasks/three/json-viewer/json-viewer.directive.html',
             scope: {
                 bowerJsonData: '@?'
             }
