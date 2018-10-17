@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -13,7 +13,7 @@
         var service = {
             getTaskOne: getTaskOne,
             getTaskTwo: getTaskTwo,
-            getBowerJson: getBowerJson,
+            getPackageJson: getPackageJson,
             getInstructions: getInstructions,
             getInput: getInput,
             getLog: getLog,
@@ -22,7 +22,7 @@
 
         return service;
 
-        function getTaskOne(){
+        function getTaskOne() {
             var response = {
                 first: "When clicked, I should become green and box B should become Red",
                 second: "When clicked, I should become green and box A should become Blue"
@@ -35,13 +35,13 @@
                 {
                     "id": "1",
                     "label": "first"
-                },{ 
+                }, {
                     "id": "2",
                     "label": "second"
-                },{
+                }, {
                     "id": "3",
                     "label": "third"
-                },{
+                }, {
                     "id": "4",
                     "label": "fourth"
                 }
@@ -49,11 +49,11 @@
             return $q.when(checkBoxes);
         }
 
-        function getBowerJson() {
-            return $http.get('/api/files/bower')
+        function getPackageJson() {
+            return $http.get('/api/files/package')
                 .then(success)
-                .catch(function(message) {
-                    exception.catcher('XHR Failed for getBowerJson()')(message);
+                .catch(function (message) {
+                    exception.catcher('XHR Failed for getPackageJson()')(message);
                     $location.url('/');
                 });
 
@@ -65,7 +65,7 @@
         function getInstructions() {
             return $http.get('/api/tasks/instructions')
                 .then(success)
-                .catch(function(message) {
+                .catch(function (message) {
                     exception.catcher('XHR Failed for getInstructions()')(message);
                     $location.url('/');
                 });
@@ -78,7 +78,7 @@
         function getInput() {
             return $http.get('/api/tasks/four')
                 .then(success)
-                .catch(function(message) {
+                .catch(function (message) {
                     exception.catcher('XHR Failed for getInput()')(message);
                     $location.url('/');
                 });
@@ -90,11 +90,11 @@
 
         function getLog() {
             return $http.get('/api/log')
-            .then(success)
-            .catch(function(message) {
-                exception.catcher('XHR Failed for getInput()')(message);
-                $location.url('/');
-            });
+                .then(success)
+                .catch(function (message) {
+                    exception.catcher('XHR Failed for getInput()')(message);
+                    $location.url('/');
+                });
 
             function success(response) {
                 return response.data;
@@ -110,7 +110,7 @@
 
         function ready(promisesArray) {
             return getReady()
-                .then(function() {
+                .then(function () {
                     return promisesArray ? $q.all(promisesArray) : readyPromise;
                 })
                 .catch(exception.catcher('"ready" function failed'));

@@ -1,13 +1,13 @@
 <pre>
     $: > Loading task 7H:R3:3     ■■■■■■■■■■■ 100%
-    $: > 
+    $: >
 
     .:*~*:._.:*~*:._.:*~*:..:*~*:._.:*~*:._.:*~*:..:*~*:._.:*~*:._.:*~*:..:*~*:._.:*~*:._.:*~*:..:*~*:._.:*~*:._.:*~*:..:*~*:.
 
-                                                            Welcome! 
+                                                            Welcome!
 
-                This task requires you to perform an API-call to our local nodeJS server and request a file. 
-                Display the content of bower.json and display it below.
+                This task requires you to perform an API-call to our local nodeJS server and request a file.
+                "Beautify" the content of package.json and display it below.
                 Why not display the content with some custom css added outside these &lt;pre> tags? =)
 
                 May the AJAX calls be with you!
@@ -15,10 +15,10 @@
     .:*~*:._.:*~*:._.:*~*:..:*~*:._.:*~*:._.:*~*:..:*~*:._.:*~*:._.:*~*:..:*~*:._.:*~*:._.:*~*:..:*~*:._.:*~*:._.:*~*:..:*~*:.
 
 
-    $: > {{(bowerJsonData.data && bowerJsonData.data.name) ? 'Data found. Powering up...' : 'No data found. Entering sleep mode...'}}
+    $: > {{(packageJsonData.data && packageJsonData.data.name) ? 'Data found. Powering up...' : 'No data found. Entering sleep mode...'}}
 
 </pre>
 
 <div>
-    {{bowerJsonData}}
+    {{packageJsonData}}
 </div>

@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -9,14 +9,14 @@
     /* @ngInject */
     function TaskThree(dataservice, logger) {
         var vm = this;
-        
+
         activate();
 
-        function activate(){
-            dataservice.getBowerJson().then(function(res){
-                vm.bowerJsonData = res;
-            }).catch(function(err) {
-                vm.bowerJsonData = 'err fetching file: ' + err;
+        function activate() {
+            dataservice.getPackageJson().then(function (res) {
+                vm.packageJsonData = res;
+            }).catch(function (err) {
+                vm.packageJsonData = 'err fetching file: ' + err;
             });
         }
     }

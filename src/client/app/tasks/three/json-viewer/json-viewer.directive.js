@@ -1,15 +1,15 @@
-(function() {
+(function () {
     angular
         .module('app.tasks')
         .directive('jsonViewer', jsonViewer);
 
-    function jsonViewer () {
+    function jsonViewer() {
         var directive = {
             link: link,
             restrict: 'EA',
             templateUrl: '/app/tasks/three/json-viewer/json-viewer.directive.html',
             scope: {
-                bowerJsonData: '=?'
+                packageJsonData: '=?'
             }
         };
         return directive;

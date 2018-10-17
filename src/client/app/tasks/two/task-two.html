@@ -5,9 +5,9 @@
                 <div class="border">
                     <b>The form should be valid when:</b>
                     <ul>
-                        <li>(any) one or more check-boxes is selected</li>
-                        <li>The select-box lists <u>the selected</u> objects below</li>
-                        <li>The select-box has an item selected</li>
+                        <li>(any) one or more checkboxes are selected</li>
+                        <li>The dropdown should list <u>the selected</u> checkbox(s) label(s)</li>
+                        <li>The dropdown has an item selected</li>
                     </ul>
                 </div>
                 <form name="testForm"  ng-submit="testForm.$valid" novalidate class="border">
@@ -27,7 +27,7 @@
                     <p>
                         I should list the labels of the checkboxes selected above
                     </p>
-                    
+
                     <fieldset class="form-group col-xs-12" ng-class="{ 'has-error': testForm.dropDown.$invalid, 'has-success': testForm.dropDown.$valid}">
                         <select class="form-control input-sm c-select" name="dropDown" ng-model="vm.dropDown" required>
                             <option value="" disabled style="display:none;">Labels of checkbox-objects</option>
@@ -35,7 +35,7 @@
                     </fieldset>
                     <hr />
                     <button class="btn btn-primary" ng-disabled="true" ng-clicked="vm.problem2Solved()">I should only be enabled if the form is valid</button>
-                
+
                     <p>
                         testForm.$valid = {{testForm.$valid}}
                     </p>
