@@ -7,22 +7,30 @@
   ],
   "license": "MIT",
   "scripts": {
-    "start": "npm run get:packages && npm run serve-dev",
-    "get:packages": "npm run get:npm && npm run get:bower",
-    "get:bower": "bower install",
-    "get:npm": "npm install",
-    "serve-dev": "nodemon src/server/app.js --config nodemon.json"
+    "start": "npm run get:packages && npm run dev",
+    "get:packages": "npm install",
+    "dev": "nodemon src/server/app.js --config nodemon.json"
   },
   "dependencies": {
-    "angular-ui-router": "0.4.2",
-    "body-parser": "1.8.2",
-    "compression": "1.1.0",
-    "cors": "2.2.0",
-    "express": "4.9.3",
-    "morgan": "1.1.1",
-    "serve-favicon": "2.0.1"
+    "@bower_components/angular": "angular/bower-angular#1.5.11",
+    "@bower_components/angular-animate": "angular/bower-angular-animate#1.5.11",
+    "@bower_components/angular-bootstrap": "angular-ui/bootstrap-bower#2",
+    "@bower_components/angular-sanitize": "angular/bower-angular-sanitize#1.5.11",
+    "@bower_components/bootstrap": "twbs/bootstrap#3.3.7",
+    "@bower_components/extras.angular.plus": "AngularPlus/AngularPlus#0.9.3",
+    "@bower_components/font-awesome": "FortAwesome/Font-Awesome#4.6.3",
+    "@bower_components/moment": "moment/moment#2.13.0",
+    "@bower_components/jquery": "jquery/jquery-dist#2.2.4",
+    "@bower_components/toastr": "johnpapa/toastr-bower#2.1.2",
+    "@uirouter/angularjs": "*",
+    "body-parser": "*",
+    "compression": "*",
+    "cors": "*",
+    "express": "*",
+    "morgan": "*",
+    "serve-favicon": "*"
   },
   "devDependencies": {
-    "nodemon": "1.11.0"
+    "nodemon": "*"
   }
 }
